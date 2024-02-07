@@ -1,6 +1,7 @@
 'use client'
 
 import { useChat, Message } from "ai/react"
+import { Button } from "./ui/button"
 
 
 
@@ -59,12 +60,13 @@ export default function ChatComponent() {
             <form className="mx-24 mb-4 fixed inset-x-0 bottom-0" onSubmit={handleSubmit}>
                 {/* <p>Messages</p> */}
                 <input
-                    className="mt-2 w-full bg-slate-800 p-2"
+                    className="mt-2 w-full p-2 bg-slate-300"
                     placeholder={'ask something'}
                     value={input}
                     onChange={handleInputChange}
                 />
-                <button className="rounded-md bg-[#041C32] border-2 border-blue-600 hover:bg-blue-600  transition-all p-2 mt-2">Send Message</button>
+                <Button className="mt-2 text-black bg-white border-2 hover:bg-slate-300 hover:text-white">Send Message</Button>
+                {/* <button className="rounded-md border-2 border-blue-600 hover:bg-blue-600  transition-all p-2 mt-2">Send Message</button> */}
             </form>
             </div>
 
