@@ -10,7 +10,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Testing",
+  title: "Future Guide",
   description: "On Next Js",
 };
 
