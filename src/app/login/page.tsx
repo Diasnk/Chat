@@ -21,6 +21,7 @@ import { Label } from "@/components/ui/label"
 export default function Login() {
     const router = useRouter();
     const [user, setUser] = React.useState({
+        username: "",
         email: "",
         password: "",
        
@@ -35,7 +36,7 @@ export default function Login() {
             const response = await axios.post("/api/users/login", user);
             console.log("Login success", response.data);
             toast.success("Login success");
-            router.push("/profile");
+            router.push("/profile/" + user.username);
         } catch (error:any) {
             console.log("Login failed", error.message);
             toast.error(error.message);
@@ -67,7 +68,7 @@ export default function Login() {
                 <CardContent className="grid gap-4">
                     <div className="grid gap-2">
                     <Label htmlFor="email">Email</Label>
-                    <Input 
+                    <Input
                         id="email" 
                         type="email" 
                         placeholder="email"
@@ -90,12 +91,25 @@ export default function Login() {
                     </span>
                 </CardContent>
                 <CardFooter className="flex flex-col">
-                    <Button className="w-full"
-                    type="submit"
-                    onClick={onLogin}
-                    >
-                        {buttonDisabled ? "Login" : "L"}
-                    </Button>
+
+                    {
+                        buttonDisabled 
+                        ? 
+                            <Button className="w-full bg-slate-400 hover:bg-slate-400"
+                            type="submit"
+                            
+                            >
+                                Login
+                            </Button>
+                        :
+                            <Button className="w-full"
+                            type="submit"
+                            onClick={onLogin}
+                            >
+                                Login
+                            </Button>
+                    }
+                    
                     <p className="mt-2 text-xs text-center text-gray-700">
                     {" "}
                     Already have an account?{" "}

@@ -34,7 +34,7 @@ export default function Login() {
             setLoading(true)
             const response = await axios.post("/api/users/register", user)
             console.log("Singup success", response.data)
-            router.push("./")
+            router.push("/profile/" + user.username)
         } catch (error: any) {
             console.log(error.message)
         } finally{
