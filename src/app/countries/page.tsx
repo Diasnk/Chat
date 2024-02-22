@@ -18,7 +18,7 @@ import { Separator } from "@/components/ui/separator"
  
 export default function Countries() {
   return (
-    <div>
+    <div className="w-full flex">
         <div className="flex justify-center w-full pt-32">
             <Carousel className="w-full max-w-xs">
                 <CarouselContent className="">
@@ -41,7 +41,7 @@ export default function Countries() {
         </div>
 
 
-        <div className="w-full flex justify-center p-20">
+        <div className="w-full flex justify-center pt-36 ">
             <ScrollArea className="h-72 w-2/3 rounded-md border">
                 <div className="p-4">
                     <h4 className="mb-4 text-sm font-medium leading-none">Tags</h4>
