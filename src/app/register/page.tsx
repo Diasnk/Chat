@@ -98,11 +98,22 @@ export default function Login() {
                     </span>
                 </CardContent>
                 <CardFooter className="flex flex-col">
-                    <Button className="w-full"
-                    type="submit"
-                    onClick={onSignup}>
-                        {buttonDisabled ? "no" : "s"}
-                    </Button>
+                    {
+                        buttonDisabled
+                        ?
+                        <Button className="w-full bg-[#8881F1] hover:bg-[#8881F1]"
+                        type="submit"
+                        >
+                            Sign Up
+                        </Button>
+                        :
+                        <Button className="w-full bg-[#6C63FF] hover:bg-[#6C63FF]"
+                        type="submit"
+                        onClick={onSignup}>
+                            {/* {buttonDisabled ? "no" : "s"} */}
+                            Sign Up
+                        </Button>
+                    }
                     <p className="mt-2 text-xs text-center text-gray-700">
                     {" "}
                     Already have an account?{" "}

@@ -95,14 +95,14 @@ export default function Login() {
                     {
                         buttonDisabled 
                         ? 
-                            <Button className="w-full bg-slate-400 hover:bg-slate-400"
+                            <Button className="w-full bg-slate-400 bg-[#8881F1] hover:bg-[#8881F1]"
                             type="submit"
                             
                             >
                                 Login
                             </Button>
                         :
-                            <Button className="w-full"
+                            <Button className="w-full bg-[#6C63FF] hover:bg-[#6C63FF]"
                             type="submit"
                             onClick={onLogin}
                             >
