@@ -113,9 +113,9 @@ export default function Login() {
                     <p className="mt-2 text-xs text-center text-gray-700">
                     {" "}
                     Already have an account?{" "}
-                    <span onClick={() => {
+                    <p onClick={() => {
                         console.log()
-                    }} className=" text-blue-600 hover:underline"><Link href="./login">Sign In</Link></span>
+                    }} className=" text-blue-600 hover:underline"><Link href="./register">Sign In</Link></p>
                     </p>
                 </CardFooter>
                 </Card>

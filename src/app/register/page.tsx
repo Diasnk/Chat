@@ -22,6 +22,7 @@ export default function Login() {
     const [user, setUser] = React.useState({
         email: "",
         password: "",
+        rpassword: "",
         username: "",
     })
 
@@ -43,7 +44,7 @@ export default function Login() {
     }
 
     useEffect(() => {
-        if(user.email.length > 0 && user.username.length > 0 && user.password.length > 0){
+        if(user.email.length > 0 && user.username.length > 0 && user.password.length > 0 && user.password == user.rpassword && user.password != '123'){
             setButtonDisabled(false)
         } else{
             setButtonDisabled(true)
@@ -93,6 +94,16 @@ export default function Login() {
                         onChange={(e) => setUser({...user, password: e.target.value})} 
                         />
                     </div>
+                    <div className="grid gap-2">
+                    <Label htmlFor="password">Repeat Password</Label>
+                    <Input 
+                        id="rpassword"
+                        type="password"
+                        placeholder="repeat password"
+                        value={user.rpassword} 
+                        onChange={(e) => setUser({...user, rpassword: e.target.value})} 
+                        />
+                    </div>
                     <span className=" text-blue-600 hover:underline text-sm">
                     Forget password ?
                     </span>
@@ -118,7 +129,7 @@ export default function Login() {
                     {" "}
                     Already have an account?{" "}
                     <span onClick={() => {
-                        console.log()
+                        console.log() 
                     }} className=" text-blue-600 hover:underline"><Link href="./login">Sign In</Link></span>
                     </p>
                 </CardFooter>
